@@ -63,6 +63,34 @@ foreach (['home' => 'Home page (list of articles)', 'article' => 'Article page']
     echo "\n";
 }
 
+$levels = array_keys($sites['eclair']['sweep'] ?? []);
+if ($levels) {
+    echo "## Scaling (article page)\n\nRequests per second and p99 latency as the number of simultaneous connections grows (wrk).\n\n";
+    echo '| | ' . implode(' | ', array_map(static fn ($c) => "$c conn.", $levels)) . " |\n|---|" . str_repeat('---:|', count($levels)) . "\n";
+    foreach ($sites as $s) {
+        echo '| ' . $s['name'] . ' | ' . implode(' | ', array_map(static fn ($c) => $n($s['sweep'][$c]['rps']) . ' req/s · p99 ' . $n($s['sweep'][$c]['latency_p99_ms'], 1) . ' ms', $levels)) . " |\n";
+    }
+    echo "\n";
+}
+
+$profile = is_file("$dir/profile.json") ? json_decode((string) file_get_contents("$dir/profile.json"), true) : [];
+if ($profile) {
+    echo "## Inside one request\n\nMeasured in a separate profiling pass (a PHP `auto_prepend_file` that logs at shutdown), removed before any timing measurement. "
+        . "Median of 7 requests. \"Built\" = page cache emptied first; \"from cache\" = page cache warm. WordPress without plugin has no page cache.\n\n";
+    echo "| | Page | Built: PHP files | Built: peak memory | Built: SQL queries | From cache: PHP files | From cache: peak memory | From cache: SQL queries |\n";
+    echo "|---|---|---:|---:|---:|---:|---:|---:|\n";
+    foreach ($sites as $key => $s) {
+        foreach (['home', 'article'] as $page) {
+            $u = $profile[$key][$page]['uncached'];
+            $c = $profile[$key][$page]['cached'];
+            $noCache = $key === 'wordpress';
+            echo '| ' . $s['name'] . " | $page | " . $u['php_files'] . ' | ' . $n($u['peak_memory_kb']) . ' KB | ' . $u['sql_queries'] . ' | '
+                . ($noCache ? 'n/a | n/a | n/a' : $c['php_files'] . ' | ' . $n($c['peak_memory_kb']) . ' KB | ' . $c['sql_queries']) . " |\n";
+        }
+    }
+    echo "\n";
+}
+
 echo "## Installation\n\n| | Size on disk (code + content) | PHP files | Needs a database |\n|---|---:|---:|---|\n";
 foreach ($sites as $key => $s) {
     echo '| ' . $s['name'] . ' | ' . number_format($s['disk_kb'] / 1024, 1) . ' MB | ' . number_format($s['php_files'], 0, '.', ' ')

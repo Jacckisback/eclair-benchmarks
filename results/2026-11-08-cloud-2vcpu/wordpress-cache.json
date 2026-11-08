@@ -3,13 +3,13 @@
     "pages": {
         "home": {
             "path": "/",
-            "ttfb_median_ms": 1.77,
-            "ttfb_p95_ms": 2.26,
-            "uncached_ttfb_median_ms": 79.81,
+            "ttfb_median_ms": 1.83,
+            "ttfb_p95_ms": 2.21,
+            "uncached_ttfb_median_ms": 61.57,
             "load": {
-                "rps": 1084,
-                "latency_p50_ms": 17.95,
-                "latency_p99_ms": 30.17,
+                "rps": 1220,
+                "latency_p50_ms": 16.01,
+                "latency_p99_ms": 25.62,
                 "errors": 0
             },
             "weight": {
@@ -28,20 +28,20 @@
         },
         "article": {
             "path": "/guide-coffee-roasting/",
-            "ttfb_median_ms": 2.14,
-            "ttfb_p95_ms": 2.6,
-            "uncached_ttfb_median_ms": 65.62,
+            "ttfb_median_ms": 1.84,
+            "ttfb_p95_ms": 2.69,
+            "uncached_ttfb_median_ms": 63.42,
             "load": {
-                "rps": 1154,
-                "latency_p50_ms": 16.74,
-                "latency_p99_ms": 29.09,
+                "rps": 1192,
+                "latency_p50_ms": 16.35,
+                "latency_p99_ms": 26.31,
                 "errors": 0
             },
             "weight": {
                 "html_bytes": 71031,
-                "html_wire": 13672,
+                "html_wire": 13673,
                 "requests": 4,
-                "total_wire": 18688,
+                "total_wire": 18689,
                 "assets": {
                     "http://127.0.0.1:8083/wp-includes/blocks/navigation/style.min.css?ver=7.1.4": 2551,
                     "http://127.0.0.1:8083/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=1bf28ded04f9f188bdcb": 1115,
@@ -54,6 +54,32 @@
             }
         }
     },
-    "disk_kb": 153824,
+    "sweep": {
+        "1": {
+            "rps": 607,
+            "latency_p50_ms": 1.57,
+            "latency_p99_ms": 2.65,
+            "errors": 0
+        },
+        "10": {
+            "rps": 1233,
+            "latency_p50_ms": 7.88,
+            "latency_p99_ms": 15.93,
+            "errors": 0
+        },
+        "50": {
+            "rps": 1171,
+            "latency_p50_ms": 41.97,
+            "latency_p99_ms": 57.44,
+            "errors": 0
+        },
+        "100": {
+            "rps": 1149,
+            "latency_p50_ms": 85.41,
+            "latency_p99_ms": 107.92,
+            "errors": 0
+        }
+    },
+    "disk_kb": 153820,
     "php_files": 1910
 }

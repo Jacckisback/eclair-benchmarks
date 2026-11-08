@@ -99,7 +99,7 @@ function page_weight(string $base, string $path): array
 function wrk(string $url, int $seconds, int $connections): array
 {
     $h = implode(' ', array_map(static fn (string $x): string => '-H ' . escapeshellarg($x), array_merge(BROWSER_HEADERS, ['Accept-Encoding: gzip'])));
-    $cmd = sprintf('wrk -t2 -c%d -d%ds --latency %s %s 2>&1', $connections, $seconds, $h, escapeshellarg($url));
+    $cmd = sprintf('wrk -t%d -c%d -d%ds --latency %s %s 2>&1', min(2, $connections), $connections, $seconds, $h, escapeshellarg($url));
     $o = (string) shell_exec($cmd);
     preg_match('~Requests/sec:\s+([\d.]+)~', $o, $rps);
     preg_match('~50%\s+([\d.]+)(us|ms|s)~', $o, $p50);
@@ -145,6 +145,12 @@ foreach (['home' => '/', 'article' => $articlePath] as $label => $path) {
         $result['pages'][$label]['ttfb_median_ms'], $result['pages'][$label]['load']['rps'],
         $result['pages'][$label]['weight']['total_wire'] / 1024, $result['pages'][$label]['weight']['requests']);
 }
+// Scalability: throughput and tail latency of the article page as the number of simultaneous visitors grows.
+$sweepSeconds = (int) (getenv('BENCH_SWEEP_SECONDS') ?: 10);
+foreach (array_map('intval', explode(',', getenv('BENCH_SWEEP') ?: '1,10,50,100')) as $c) {
+    $result['sweep'][(string) $c] = wrk($base . $articlePath, $sweepSeconds, $c);
+}
+echo '  ' . $name . ' scaling: ' . implode(' | ', array_map(static fn ($c, $r) => "c=$c {$r['rps']} req/s", array_keys($result['sweep']), $result['sweep'])) . "\n";
 $result['disk_kb'] = (int) trim((string) shell_exec('du -sk --exclude=cache --exclude=uploads --exclude=cache-enabler ' . escapeshellarg($root) . ' | cut -f1'));
 $result['php_files'] = (int) trim((string) shell_exec('find ' . escapeshellarg($root) . ' -name "*.php" | wc -l'));
 file_put_contents($out, json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");

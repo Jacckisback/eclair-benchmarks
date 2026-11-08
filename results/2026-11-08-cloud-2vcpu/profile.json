@@ -1,0 +1,104 @@
+{
+    "eclair": {
+        "home": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 26,
+                "peak_memory_kb": 542,
+                "sql_queries": 0,
+                "wall_ms": 2.18
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 1,
+                "peak_memory_kb": 379,
+                "sql_queries": 0,
+                "wall_ms": 0.25
+            }
+        },
+        "article": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 30,
+                "peak_memory_kb": 552,
+                "sql_queries": 0,
+                "wall_ms": 1.75
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 1,
+                "peak_memory_kb": 379,
+                "sql_queries": 0,
+                "wall_ms": 0.27
+            }
+        }
+    },
+    "wordpress": {
+        "home": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 494,
+                "peak_memory_kb": 6152,
+                "sql_queries": 25,
+                "wall_ms": 56.86
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 494,
+                "peak_memory_kb": 6152,
+                "sql_queries": 25,
+                "wall_ms": 54.39
+            }
+        },
+        "article": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 496,
+                "peak_memory_kb": 6289,
+                "sql_queries": 32,
+                "wall_ms": 58.2
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 496,
+                "peak_memory_kb": 6289,
+                "sql_queries": 32,
+                "wall_ms": 63.9
+            }
+        }
+    },
+    "wordpress-cache": {
+        "home": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 501,
+                "peak_memory_kb": 6239,
+                "sql_queries": 26,
+                "wall_ms": 81.76
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 27,
+                "peak_memory_kb": 614,
+                "sql_queries": 0,
+                "wall_ms": 0.79
+            }
+        },
+        "article": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 503,
+                "peak_memory_kb": 6376,
+                "sql_queries": 33,
+                "wall_ms": 67.69
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 27,
+                "peak_memory_kb": 596,
+                "sql_queries": 0,
+                "wall_ms": 0.71
+            }
+        }
+    }
+}
