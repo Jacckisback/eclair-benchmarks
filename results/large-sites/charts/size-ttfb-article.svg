@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 430" width="860" height="430" role="img" aria-label="Article page from cache, as the site grows">
+<style>
+  .bg{fill:#fcfcfb} .t1{fill:#0b0b0b} .t2{fill:#52514e} .t3{fill:#7a7974} .grid{stroke:#e6e5e0}
+  .s1{fill:#6250d6;stroke:#6250d6} .s2{fill:#eb6834;stroke:#eb6834} .s3{fill:#2a78d6;stroke:#2a78d6} .s4{fill:#1baf7a;stroke:#1baf7a} .s5{fill:#eda100;stroke:#eda100}
+  .ring{stroke:#fcfcfb} .arrow{stroke:#9a998f} text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .num{font-variant-numeric:tabular-nums}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1a1a19} .t1{fill:#f0efec} .t2{fill:#c3c2b7} .t3{fill:#9a998f} .grid{stroke:#33332f}
+    .s1{fill:#9085e9;stroke:#9085e9} .s2{fill:#d95926;stroke:#d95926} .s3{fill:#3987e5;stroke:#3987e5} .s4{fill:#199e70;stroke:#199e70} .s5{fill:#c98500;stroke:#c98500}
+    .ring{stroke:#1a1a19}
+  }
+</style>
+<rect class="bg" width="860" height="430" rx="12"/>
+<text class="t1" x="24" y="36" font-size="19" font-weight="650">Article page from cache, as the site grows</text>
+<text class="t2" x="24" y="60" font-size="13.5">Median time to first byte of 300 requests. Apache. Lower is better.</text>
+<line class="grid" x1="80" y1="358.0" x2="620" y2="358.0" stroke-width="1"/>
+<text class="t3 num" x="70" y="362.0" font-size="11.5" text-anchor="end">0.1</text>
+<line class="grid" x1="80" y1="270.7" x2="620" y2="270.7" stroke-width="1"/>
+<text class="t3 num" x="70" y="274.7" font-size="11.5" text-anchor="end">1</text>
+<line class="grid" x1="80" y1="183.3" x2="620" y2="183.3" stroke-width="1"/>
+<text class="t3 num" x="70" y="187.3" font-size="11.5" text-anchor="end">10</text>
+<line class="grid" x1="80" y1="96.0" x2="620" y2="96.0" stroke-width="1"/>
+<text class="t3 num" x="70" y="100.0" font-size="11.5" text-anchor="end">100</text>
+<text class="t3 num" x="80.0" y="378" font-size="11.5" text-anchor="middle">20</text>
+<text class="t3 num" x="350.0" y="378" font-size="11.5" text-anchor="middle">1,000</text>
+<text class="t3 num" x="620.0" y="378" font-size="11.5" text-anchor="middle">2,900</text>
+<text class="t2" x="350.0" y="404" font-size="12.5" text-anchor="middle">Articles in the site</text>
+<text class="t2" x="24" y="80" font-size="12.5">ms (log scale)</text>
+<polyline class="s1" style="fill:none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="80.0,266.7 350.0,260.7 620.0,273.4"/>
+<circle class="s1 ring" cx="80.0" cy="266.7" r="5" stroke-width="2"/>
+<circle class="s1 ring" cx="350.0" cy="260.7" r="5" stroke-width="2"/>
+<circle class="s1 ring" cx="620.0" cy="273.4" r="5" stroke-width="2"/>
+<polyline class="s2" style="fill:none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="80.0,248.4 350.0,250.1 620.0,250.1"/>
+<circle class="s2 ring" cx="80.0" cy="248.4" r="5" stroke-width="2"/>
+<circle class="s2 ring" cx="350.0" cy="250.1" r="5" stroke-width="2"/>
+<circle class="s2 ring" cx="620.0" cy="250.1" r="5" stroke-width="2"/>
+<polyline class="s4" style="fill:none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="80.0,106.6 350.0,111.2 620.0,112.8"/>
+<circle class="s4 ring" cx="80.0" cy="106.6" r="5" stroke-width="2"/>
+<circle class="s4 ring" cx="350.0" cy="111.2" r="5" stroke-width="2"/>
+<circle class="s4 ring" cx="620.0" cy="112.8" r="5" stroke-width="2"/>
+<text class="t1" x="634.0" y="110.8" font-size="13.5" font-weight="650">WordPress</text>
+<text class="t2 num" x="634.0" y="126.8" font-size="12.5">64.29 ms</text>
+<text class="t1" x="634.0" y="248.1" font-size="13.5" font-weight="650">WordPress + Cache Enabler</text>
+<text class="t2 num" x="634.0" y="264.1" font-size="12.5">1.72 ms</text>
+<text class="t1" x="634.0" y="282.1" font-size="13.5" font-weight="650">Éclair</text>
+<text class="t2 num" x="634.0" y="298.1" font-size="12.5">0.93 ms</text>
+</svg>

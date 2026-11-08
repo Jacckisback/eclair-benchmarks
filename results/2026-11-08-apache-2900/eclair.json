@@ -1,0 +1,77 @@
+{
+    "name": "\u00c9clair 2.0.0",
+    "pages": {
+        "home": {
+            "path": "/",
+            "ttfb_median_ms": 0.91,
+            "ttfb_p95_ms": 1.4,
+            "uncached_ttfb_median_ms": 19.96,
+            "load": {
+                "rps": 2228,
+                "latency_p50_ms": 8.68,
+                "latency_p99_ms": 14.88,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 25508,
+                "html_wire": 6533,
+                "requests": 2,
+                "total_wire": 7787,
+                "assets": {
+                    "http://127.0.0.1:8081/assets/site/site.js?v=050a9ef9": 1254
+                },
+                "fonts_declared": []
+            }
+        },
+        "article": {
+            "path": "/blog/guide-coffee-roasting",
+            "ttfb_median_ms": 0.93,
+            "ttfb_p95_ms": 1.26,
+            "uncached_ttfb_median_ms": 31.03,
+            "load": {
+                "rps": 2063,
+                "latency_p50_ms": 9.35,
+                "latency_p99_ms": 16.47,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 25863,
+                "html_wire": 7276,
+                "requests": 2,
+                "total_wire": 8530,
+                "assets": {
+                    "http://127.0.0.1:8081/assets/site/site.js?v=050a9ef9": 1254
+                },
+                "fonts_declared": []
+            }
+        }
+    },
+    "sweep": {
+        "1": {
+            "rps": 1012,
+            "latency_p50_ms": 0.95,
+            "latency_p99_ms": 1.88,
+            "errors": 0
+        },
+        "10": {
+            "rps": 2120,
+            "latency_p50_ms": 4.46,
+            "latency_p99_ms": 11.37,
+            "errors": 0
+        },
+        "50": {
+            "rps": 2077,
+            "latency_p50_ms": 23.56,
+            "latency_p99_ms": 33.37,
+            "errors": 0
+        },
+        "100": {
+            "rps": 2044,
+            "latency_p50_ms": 47.85,
+            "latency_p99_ms": 202.64,
+            "errors": 0
+        }
+    },
+    "disk_kb": 16048,
+    "php_files": 3035
+}

@@ -1,0 +1,138 @@
+{
+    "eclair": {
+        "home": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 26,
+                "peak_memory_kb": 12252,
+                "sql_queries": 0,
+                "wall_ms": 21.5
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 1,
+                "peak_memory_kb": 379,
+                "sql_queries": 0,
+                "wall_ms": 0.26
+            }
+        },
+        "article": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 30,
+                "peak_memory_kb": 12252,
+                "sql_queries": 0,
+                "wall_ms": 30.61
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 1,
+                "peak_memory_kb": 379,
+                "sql_queries": 0,
+                "wall_ms": 0.28
+            }
+        }
+    },
+    "wordpress-cache": {
+        "home": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 501,
+                "peak_memory_kb": 6245,
+                "sql_queries": 26,
+                "wall_ms": 77.36
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 27,
+                "peak_memory_kb": 614,
+                "sql_queries": 0,
+                "wall_ms": 0.75
+            }
+        },
+        "article": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 503,
+                "peak_memory_kb": 6377,
+                "sql_queries": 33,
+                "wall_ms": 67.19
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 27,
+                "peak_memory_kb": 596,
+                "sql_queries": 0,
+                "wall_ms": 0.65
+            }
+        }
+    },
+    "wordpress": {
+        "home": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 494,
+                "peak_memory_kb": 6159,
+                "sql_queries": 25,
+                "wall_ms": 76.4
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 494,
+                "peak_memory_kb": 6159,
+                "sql_queries": 25,
+                "wall_ms": 71.67
+            }
+        },
+        "article": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 496,
+                "peak_memory_kb": 6290,
+                "sql_queries": 32,
+                "wall_ms": 71.05
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 496,
+                "peak_memory_kb": 6290,
+                "sql_queries": 32,
+                "wall_ms": 67.14
+            }
+        }
+    },
+    "kirby": {
+        "home": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 174,
+                "peak_memory_kb": 15474,
+                "sql_queries": 0,
+                "wall_ms": 131.15
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 131,
+                "peak_memory_kb": 561,
+                "sql_queries": 0,
+                "wall_ms": 1.79
+            }
+        },
+        "article": {
+            "uncached": {
+                "samples": 7,
+                "php_files": 171,
+                "peak_memory_kb": 5520,
+                "sql_queries": 0,
+                "wall_ms": 22.22
+            },
+            "cached": {
+                "samples": 7,
+                "php_files": 131,
+                "peak_memory_kb": 5136,
+                "sql_queries": 0,
+                "wall_ms": 23.54
+            }
+        }
+    }
+}

@@ -1,0 +1,262 @@
+{
+  "eclair": {
+    "home": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 100,
+      "fcp_ms": 661,
+      "lcp_ms": 987,
+      "tbt_ms": 36,
+      "cls": 0,
+      "speed_index_ms": 661,
+      "total_bytes": 11110,
+      "requests": 3,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 1,
+      "performance_all": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 987
+    },
+    "article": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 100,
+      "fcp_ms": 764,
+      "lcp_ms": 835,
+      "tbt_ms": 0,
+      "cls": 0,
+      "speed_index_ms": 764,
+      "total_bytes": 11925,
+      "requests": 3,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 5,
+      "performance_all": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 835
+    }
+  },
+  "wordpress-cache": {
+    "home": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 91,
+      "fcp_ms": 1052,
+      "lcp_ms": 1352,
+      "tbt_ms": 0,
+      "cls": 0,
+      "speed_index_ms": 1052,
+      "total_bytes": 99376,
+      "requests": 8,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 0,
+      "performance_all": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 1352
+    },
+    "article": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 92,
+      "fcp_ms": 905,
+      "lcp_ms": 1655,
+      "tbt_ms": 0,
+      "cls": 0,
+      "speed_index_ms": 905,
+      "total_bytes": 104340,
+      "requests": 10,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 0,
+      "performance_all": [
+        100,
+        99,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 1655
+    }
+  },
+  "wordpress-fastcgi": {
+    "home": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 91,
+      "fcp_ms": 1050,
+      "lcp_ms": 1650,
+      "tbt_ms": 0,
+      "cls": 0,
+      "speed_index_ms": 1050,
+      "total_bytes": 99420,
+      "requests": 8,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 0,
+      "performance_all": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 1650
+    },
+    "article": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 92,
+      "fcp_ms": 1351,
+      "lcp_ms": 1651,
+      "tbt_ms": 19,
+      "cls": 0,
+      "speed_index_ms": 1351,
+      "total_bytes": 104557,
+      "requests": 10,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 0,
+      "performance_all": [
+        100,
+        100,
+        100,
+        99,
+        99
+      ],
+      "lcp_median_ms": 1651
+    }
+  },
+  "wordpress": {
+    "home": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 91,
+      "fcp_ms": 1052,
+      "lcp_ms": 1352,
+      "tbt_ms": 0,
+      "cls": 0,
+      "speed_index_ms": 1052,
+      "total_bytes": 99376,
+      "requests": 8,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 0,
+      "performance_all": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 1352
+    },
+    "article": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 92,
+      "fcp_ms": 901,
+      "lcp_ms": 1651,
+      "tbt_ms": 0,
+      "cls": 0,
+      "speed_index_ms": 901,
+      "total_bytes": 104512,
+      "requests": 10,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 0,
+      "performance_all": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 1651
+    }
+  },
+  "kirby": {
+    "home": {
+      "performance": 100,
+      "accessibility": 94,
+      "best_practices": 100,
+      "seo": 90,
+      "fcp_ms": 1133,
+      "lcp_ms": 1133,
+      "tbt_ms": 0,
+      "cls": 0,
+      "speed_index_ms": 1133,
+      "total_bytes": 23171,
+      "requests": 8,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 0,
+      "performance_all": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 1133
+    },
+    "article": {
+      "performance": 100,
+      "accessibility": 94,
+      "best_practices": 100,
+      "seo": 90,
+      "fcp_ms": 1132,
+      "lcp_ms": 1132,
+      "tbt_ms": 0,
+      "cls": 0,
+      "speed_index_ms": 1132,
+      "total_bytes": 23821,
+      "requests": 9,
+      "lighthouse": "12.8.2",
+      "chrome": "Chrome/153.0.0.0",
+      "runs": 5,
+      "failed_runs": 0,
+      "performance_all": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "lcp_median_ms": 1132
+    }
+  }
+}

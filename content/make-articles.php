@@ -1,8 +1,10 @@
 <?php
-// Generates the shared test content: the same 20 articles are loaded into every CMS.
-// Deterministic: running it twice gives exactly the same file.
+// Generates the shared test content: the same articles are loaded into every CMS.
+// Usage: php make-articles.php [count=20]   → content/articles.json
+// Deterministic: the same count always gives exactly the same file.
 declare(strict_types=1);
 
+$count = max(1, (int) ($argv[1] ?? 20));
 $topics = ['coffee roasting', 'urban gardening', 'bread baking', 'trail running', 'home espresso', 'pottery glazes',
     'bike maintenance', 'balcony herbs', 'sourdough starters', 'film photography', 'chess openings', 'wine pairing',
     'woodworking joints', 'indoor plants', 'camping meals', 'tea brewing', 'knife sharpening', 'composting', 'pizza ovens', 'cocktail basics'];
@@ -16,18 +18,17 @@ $paragraphs = [
 ];
 
 $articles = [];
-foreach ($topics as $i => $topic) {
-    $n = $i + 1;
-    $blocks = [];
-    foreach ($paragraphs as $p) {
-        $blocks[] = sprintf($p, $topic);
-    }
+$start = strtotime('2026-10-20 09:00:00 UTC');
+for ($i = 0; $i < $count; $i++) {
+    $topic = $topics[$i % count($topics)];
+    $round = intdiv($i, count($topics)) + 1; // 1 for the first 20 articles, then 2, 3…
     $articles[] = [
-        'slug' => 'guide-' . str_replace(' ', '-', $topic),
-        'title' => 'A practical guide to ' . $topic,
+        'slug' => 'guide-' . str_replace(' ', '-', $topic) . ($round > 1 ? '-part-' . $round : ''),
+        'title' => 'A practical guide to ' . $topic . ($round > 1 ? ', part ' . $round : ''),
         'excerpt' => 'Simple, honest advice to get started with ' . $topic . '.',
-        'paragraphs' => $blocks,
-        'date' => sprintf('2026-10-%02d 09:00:00', $n),
+        'paragraphs' => array_map(static fn (string $p): string => sprintf($p, $topic), $paragraphs),
+        // One article per hour, the first one being the oldest.
+        'date' => gmdate('Y-m-d H:i:s', $start - ($count - 1 - $i) * 3600),
     ];
 }
 

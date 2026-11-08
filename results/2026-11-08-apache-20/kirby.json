@@ -1,0 +1,88 @@
+{
+    "name": "Kirby 5.6.3 (pages cache)",
+    "pages": {
+        "home": {
+            "path": "/notes",
+            "ttfb_median_ms": 1.83,
+            "ttfb_p95_ms": 2.29,
+            "uncached_ttfb_median_ms": 5.11,
+            "load": {
+                "rps": 1211,
+                "latency_p50_ms": 16.27,
+                "latency_p99_ms": 23.26,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 13939,
+                "html_wire": 3053,
+                "requests": 7,
+                "total_wire": 14543,
+                "assets": {
+                    "http://127.0.0.1:8084/assets/css/prism.css": 961,
+                    "http://127.0.0.1:8084/assets/css/lightbox.css": 409,
+                    "http://127.0.0.1:8084/assets/css/index.css": 1929,
+                    "http://127.0.0.1:8084/assets/js/prism.js": 6705,
+                    "http://127.0.0.1:8084/assets/js/lightbox.js": 1304,
+                    "http://127.0.0.1:8084/assets/js/index.js": 182
+                },
+                "fonts_declared": []
+            }
+        },
+        "article": {
+            "path": "/notes/guide-coffee-roasting",
+            "ttfb_median_ms": 1.89,
+            "ttfb_p95_ms": 3.05,
+            "uncached_ttfb_median_ms": 3.89,
+            "load": {
+                "rps": 1106,
+                "latency_p50_ms": 17.65,
+                "latency_p99_ms": 26.67,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 8297,
+                "html_wire": 3191,
+                "requests": 8,
+                "total_wire": 14908,
+                "assets": {
+                    "http://127.0.0.1:8084/assets/css/prism.css": 961,
+                    "http://127.0.0.1:8084/assets/css/lightbox.css": 409,
+                    "http://127.0.0.1:8084/assets/css/index.css": 1929,
+                    "http://127.0.0.1:8084/assets/css/templates/note.css": 227,
+                    "http://127.0.0.1:8084/assets/js/prism.js": 6705,
+                    "http://127.0.0.1:8084/assets/js/lightbox.js": 1304,
+                    "http://127.0.0.1:8084/assets/js/index.js": 182
+                },
+                "fonts_declared": []
+            }
+        }
+    },
+    "sweep": {
+        "1": {
+            "rps": 512,
+            "latency_p50_ms": 1.88,
+            "latency_p99_ms": 3.2,
+            "errors": 0
+        },
+        "10": {
+            "rps": 1127,
+            "latency_p50_ms": 8.66,
+            "latency_p99_ms": 14.74,
+            "errors": 0
+        },
+        "50": {
+            "rps": 1122,
+            "latency_p50_ms": 43.67,
+            "latency_p99_ms": 58.63,
+            "errors": 0
+        },
+        "100": {
+            "rps": 1091,
+            "latency_p50_ms": 89.39,
+            "latency_p99_ms": 150.78,
+            "errors": 0
+        }
+    },
+    "disk_kb": 20576,
+    "php_files": 794
+}

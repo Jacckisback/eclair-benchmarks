@@ -1,11 +1,12 @@
 <?php
 // Measures one site: response time, throughput, page weight, size on disk.
-// Usage: php measure.php <name> <base-url> <docroot> <article-path> <out.json> [page-cache-dir]
+// Usage: php measure.php <name> <base-url> <docroot> <article-path> <out.json> [page-cache-dir] [list-path]
 // page-cache-dir: emptied before each "uncached" request, to measure how fast the CMS builds a page from scratch.
 declare(strict_types=1);
 
 [, $name, $base, $root, $articlePath, $out] = $argv;
 $cacheDir = $argv[6] ?? '';
+$listPath = $argv[7] ?? '/'; // the page listing the latest articles (home for Éclair and WordPress, /notes for Kirby)
 $samples = (int) (getenv('BENCH_SAMPLES') ?: 300);
 $wrkSeconds = (int) (getenv('BENCH_WRK_SECONDS') ?: 20);
 $wrkConnections = (int) (getenv('BENCH_WRK_CONNECTIONS') ?: 20);
@@ -100,6 +101,14 @@ function wrk(string $url, int $seconds, int $connections): array
 {
     $h = implode(' ', array_map(static fn (string $x): string => '-H ' . escapeshellarg($x), array_merge(BROWSER_HEADERS, ['Accept-Encoding: gzip'])));
     $cmd = sprintf('wrk -t%d -c%d -d%ds --latency %s %s 2>&1', min(2, $connections), $connections, $seconds, $h, escapeshellarg($url));
+    // Optional separate load machine: BENCH_LOAD_SSH=user@host runs wrk there, against BENCH_TARGET_HOST (this server's address).
+    $remote = (string) getenv('BENCH_LOAD_SSH');
+    if ($remote !== '') {
+        $target = (string) (getenv('BENCH_TARGET_HOST') ?: gethostname());
+        $remoteUrl = preg_replace('~^http://127\.0\.0\.1~', 'http://' . $target, $url);
+        $cmd = sprintf('ssh -o BatchMode=yes %s %s 2>&1', escapeshellarg($remote),
+            escapeshellarg(sprintf('wrk -t%d -c%d -d%ds --latency %s %s', min(4, $connections), $connections, $seconds, $h, escapeshellarg($remoteUrl))));
+    }
     $o = (string) shell_exec($cmd);
     preg_match('~Requests/sec:\s+([\d.]+)~', $o, $rps);
     preg_match('~50%\s+([\d.]+)(us|ms|s)~', $o, $p50);
@@ -119,7 +128,7 @@ function purge(string $dir): void
 }
 
 $result = ['name' => $name, 'pages' => []];
-foreach (['home' => '/', 'article' => $articlePath] as $label => $path) {
+foreach (['home' => $listPath, 'article' => $articlePath] as $label => $path) {
     $first = get($base . $path);
     if ($first['status'] !== 200) {
         fwrite(STDERR, "$name $path answered HTTP {$first['status']}\n");

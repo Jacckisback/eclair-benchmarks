@@ -1,0 +1,11 @@
+{
+  "name": "eclair-benchmarks",
+  "private": true,
+  "type": "module",
+  "description": "Browser measurements (Lighthouse) for the Éclair CMS benchmarks",
+  "dependencies": {
+    "@sparticuz/chromium": "^140.0.0",
+    "chrome-launcher": "^1.2.0",
+    "lighthouse": "^12.8.0"
+  }
+}

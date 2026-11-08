@@ -1,0 +1,85 @@
+{
+    "name": "WordPress 7.1.4",
+    "pages": {
+        "home": {
+            "path": "/",
+            "ttfb_median_ms": 65.25,
+            "ttfb_p95_ms": 91.29,
+            "uncached_ttfb_median_ms": 60.58,
+            "load": {
+                "rps": 31,
+                "latency_p50_ms": 628.7,
+                "latency_p99_ms": 811.46,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 90893,
+                "html_wire": 15689,
+                "requests": 2,
+                "total_wire": 16853,
+                "assets": {
+                    "http://127.0.0.1:8082/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=1bf28ded04f9f188bdcb": 1164
+                },
+                "fonts_declared": {
+                    "http://127.0.0.1:8082/wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2": 53600,
+                    "http://127.0.0.1:8082/wp-content/themes/twentytwentyfive/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2": 106112
+                }
+            }
+        },
+        "article": {
+            "path": "/guide-coffee-roasting/",
+            "ttfb_median_ms": 60.02,
+            "ttfb_p95_ms": 87.89,
+            "uncached_ttfb_median_ms": 58.07,
+            "load": {
+                "rps": 33,
+                "latency_p50_ms": 587.15,
+                "latency_p99_ms": 737.88,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 70996,
+                "html_wire": 15513,
+                "requests": 4,
+                "total_wire": 21184,
+                "assets": {
+                    "http://127.0.0.1:8082/wp-includes/blocks/navigation/style.min.css?ver=7.1.4": 3120,
+                    "http://127.0.0.1:8082/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=1bf28ded04f9f188bdcb": 1164,
+                    "http://127.0.0.1:8082/wp-includes/js/comment-reply.min.js?ver=7.1.4": 1387
+                },
+                "fonts_declared": {
+                    "http://127.0.0.1:8082/wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2": 53600,
+                    "http://127.0.0.1:8082/wp-content/themes/twentytwentyfive/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2": 106112
+                }
+            }
+        }
+    },
+    "sweep": {
+        "1": {
+            "rps": 16,
+            "latency_p50_ms": 58.85,
+            "latency_p99_ms": 95.87,
+            "errors": 0
+        },
+        "10": {
+            "rps": 34,
+            "latency_p50_ms": 292.8,
+            "latency_p99_ms": 389.7,
+            "errors": 0
+        },
+        "50": {
+            "rps": 33,
+            "latency_p50_ms": 1500,
+            "latency_p99_ms": 1620,
+            "errors": 0
+        },
+        "100": {
+            "rps": 28,
+            "latency_p50_ms": 1730,
+            "latency_p99_ms": 1990,
+            "errors": 0
+        }
+    },
+    "disk_kb": 153816,
+    "php_files": 1901
+}

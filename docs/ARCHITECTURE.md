@@ -2,7 +2,7 @@
 
 The benchmark shows *how much* faster Éclair is. This page explains *why*, from the code of each CMS. File names refer to the [Éclair source](https://github.com/Jacckisback/eclair-cms/tree/main/eclair) and to WordPress core.
 
-![What happens inside the server for one visit](../results/2026-11-08-cloud-2vcpu/charts/request-path.svg)
+![What happens inside the server for one visit](../results/2026-11-08-apache-20/charts/request-path.svg)
 
 ## 1. Éclair: the page cache is checked before the application exists
 
@@ -26,7 +26,9 @@ When the page is not cached (first visit after an edit, or a page that cannot be
 - **No database.** Content lives in JSON files under `data/` (each guarded by `<?php exit; ?>` so it can never be served). A compact index lists every item with what lists and menus need (title, date, excerpt, category); a full item is read only for the page being displayed.
 - The theme renders plain PHP templates, the HTML is sent, then saved to `cache/pages/` for the next visitor.
 
-Result, measured: **about 30 PHP files, 0 SQL queries, about 0.55 MB, about 3 to 4 ms.**
+Result, measured: **about 30 PHP files, 0 SQL queries, about 0.55 MB, about 3 to 4 ms** with 20 articles.
+
+**The cost grows with the size of the site.** The index of all contents is read whole by every uncached request. With 1,000 articles a page is built in about 7 to 10 ms, with 2,900 articles in 20 to 31 ms and about 12 MB of memory (see the [site-size results](../results/large-sites/)). At 2,900 articles it is still about 2 to 3.5 times faster than WordPress, but the gap is closing, while WordPress, which queries an indexed database, stays flat at about 60 to 75 ms. Pages served from the cache are not affected (one file, under 1.5 ms, at every size). Éclair 2.x also caps a site at 3,000 contents.
 
 ## 3. WordPress + a page cache plugin (Cache Enabler)
 
@@ -47,7 +49,7 @@ Result, measured: **about 500 PHP files, about 30 SQL queries, about 6 MB of mem
 | Situation | What visitors get on Éclair | On WordPress |
 |---|---|---|
 | A normal page view | 1 PHP file, no database | 27 files with a cache plugin, 500 files and ~30 SQL queries without |
-| First view after an edit | ~30 files, no database, ~3–4 ms | ~500 files, ~30 SQL queries, ~60 ms |
+| First view after an edit | ~30 files, no database, ~3–4 ms (20 articles) to ~30 ms (2,900 articles) | ~500 files, ~30 SQL queries, ~60–75 ms at any size |
 | A traffic spike | ~2× the throughput of WordPress + cache on the same server | — |
 | Hosting | No database server to run, back up or secure; 2.5 MB of code | MySQL/MariaDB required; ~150 MB of code |
 

@@ -1,0 +1,10 @@
+{"date": "2026-11-08T14:09Z", "server": "apache", "articles": 2900,
+ "eclair": "2.0.0", "eclair_sha256": "4ba43998712a357d8ffe6f29e9ade9396d56abe821cdb7e2d9da74444434a90f",
+ "wordpress": "7.1.4", "cache_enabler": "1.8.16", "kirby": "5.6.3",
+ "machine": "Intel(R) Xeon(R) Processor @ 2.10GHz, 2 vCPU, 7 GB RAM",
+ "sites": [
+  {"key": "eclair", "name": "Éclair 2.0.0", "port": 8081, "list": "/", "article": "/blog/guide-coffee-roasting"},
+  {"key": "wordpress-cache", "name": "WordPress 7.1.4 + Cache Enabler", "port": 8083, "list": "/", "article": "/guide-coffee-roasting/"},
+  {"key": "wordpress", "name": "WordPress 7.1.4", "port": 8082, "list": "/", "article": "/guide-coffee-roasting/"},
+  {"key": "kirby", "name": "Kirby 5.6.3 (pages cache)", "port": 8084, "list": "/notes", "article": "/notes/guide-coffee-roasting"}
+ ]}

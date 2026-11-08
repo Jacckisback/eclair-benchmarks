@@ -29,11 +29,16 @@ foreach (get_posts(['post_type' => 'post', 'numberposts' => -1, 'post_status' =>
 }
 
 $articles = json_decode((string) file_get_contents($articlesFile), true);
+wp_defer_term_counting(true); // faster bulk import, counts updated at the end
+wp_suspend_cache_invalidation(true);
 foreach ($articles as $a) {
     $content = implode("\n\n", array_map(static fn (string $p): string => "<!-- wp:paragraph -->\n<p>$p</p>\n<!-- /wp:paragraph -->", $a['paragraphs']));
     wp_insert_post(['post_title' => $a['title'], 'post_name' => $a['slug'], 'post_content' => $content,
         'post_excerpt' => $a['excerpt'], 'post_status' => 'publish', 'post_date' => $a['date'], 'post_author' => 1]);
 }
+
+wp_suspend_cache_invalidation(false);
+wp_defer_term_counting(false);
 
 if ($withCache === '1') {
     $result = activate_plugin('cache-enabler/cache-enabler.php');

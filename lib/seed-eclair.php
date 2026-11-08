@@ -37,10 +37,26 @@ foreach (Content::index() as $id => $entry) {
     }
 }
 $articles = json_decode((string) file_get_contents($articlesFile), true);
-foreach ($articles as $a) {
-    Content::save(['type' => 'post', 'status' => 'published', 'lang' => 'en', 'title' => $a['title'], 'slug' => $a['slug'],
-        'date' => $a['date'], 'author' => $user['id'], 'seo' => ['description' => $a['excerpt']],
-        'blocks' => array_map(static fn (string $p): array => ['type' => 'paragraph', 'text' => $p], $a['paragraphs'])], $user);
+$toItem = static fn (array $a): array => ['type' => 'post', 'status' => 'published', 'lang' => 'en', 'title' => $a['title'], 'slug' => $a['slug'],
+    'date' => $a['date'], 'author' => $user['id'], 'seo' => ['description' => $a['excerpt']],
+    'blocks' => array_map(static fn (string $p): array => ['type' => 'paragraph', 'text' => $p], $a['paragraphs'])];
+if (count($articles) <= 50) {
+    // Small sites: through Content::save(), the exact code path of the editor.
+    foreach ($articles as $a) {
+        Content::save($toItem($a), $user);
+    }
+} else {
+    // Large sites: Content::save() rewrites the whole index at every call. Each item is still built and validated
+    // by Content::build() (the same function save() uses), written as Éclair writes it, then the index is rebuilt once.
+    $index = Content::index();
+    foreach ($articles as $a) {
+        $item = Content::build($toItem($a), $user, null, $index);
+        Eclair\Store::write('content/' . $item['id'], $item);
+        $index[$item['id']] = Content::entry($item);
+    }
+    Eclair\Store::write('index', $index);
+    Content::forget();
+    Eclair\Cache::purge();
 }
 $first = null;
 foreach (Content::published('post') as $e) {
