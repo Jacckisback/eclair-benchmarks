@@ -1,0 +1,51 @@
+{
+    "name": "\u00c9clair 2.0.0",
+    "pages": {
+        "home": {
+            "path": "/",
+            "ttfb_median_ms": 1.04,
+            "ttfb_p95_ms": 1.48,
+            "uncached_ttfb_median_ms": 2.83,
+            "load": {
+                "rps": 2332,
+                "latency_p50_ms": 8.29,
+                "latency_p99_ms": 15.26,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 25316,
+                "html_wire": 6544,
+                "requests": 2,
+                "total_wire": 7798,
+                "assets": {
+                    "http://127.0.0.1:8081/assets/site/site.js?v=050a9ef9": 1254
+                },
+                "fonts_declared": []
+            }
+        },
+        "article": {
+            "path": "/blog/guide-coffee-roasting",
+            "ttfb_median_ms": 0.83,
+            "ttfb_p95_ms": 0.95,
+            "uncached_ttfb_median_ms": 2.5,
+            "load": {
+                "rps": 2183,
+                "latency_p50_ms": 8.83,
+                "latency_p99_ms": 16.5,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 25808,
+                "html_wire": 7257,
+                "requests": 2,
+                "total_wire": 8511,
+                "assets": {
+                    "http://127.0.0.1:8081/assets/site/site.js?v=050a9ef9": 1254
+                },
+                "fonts_declared": []
+            }
+        }
+    },
+    "disk_kb": 2560,
+    "php_files": 155
+}

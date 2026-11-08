@@ -1,0 +1,59 @@
+{
+    "name": "WordPress 7.1.4 + Cache Enabler",
+    "pages": {
+        "home": {
+            "path": "/",
+            "ttfb_median_ms": 1.77,
+            "ttfb_p95_ms": 2.26,
+            "uncached_ttfb_median_ms": 79.81,
+            "load": {
+                "rps": 1084,
+                "latency_p50_ms": 17.95,
+                "latency_p99_ms": 30.17,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 90975,
+                "html_wire": 13689,
+                "requests": 2,
+                "total_wire": 14804,
+                "assets": {
+                    "http://127.0.0.1:8083/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=1bf28ded04f9f188bdcb": 1115
+                },
+                "fonts_declared": {
+                    "http://127.0.0.1:8083/wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2": 53600,
+                    "http://127.0.0.1:8083/wp-content/themes/twentytwentyfive/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2": 106112
+                }
+            }
+        },
+        "article": {
+            "path": "/guide-coffee-roasting/",
+            "ttfb_median_ms": 2.14,
+            "ttfb_p95_ms": 2.6,
+            "uncached_ttfb_median_ms": 65.62,
+            "load": {
+                "rps": 1154,
+                "latency_p50_ms": 16.74,
+                "latency_p99_ms": 29.09,
+                "errors": 0
+            },
+            "weight": {
+                "html_bytes": 71031,
+                "html_wire": 13672,
+                "requests": 4,
+                "total_wire": 18688,
+                "assets": {
+                    "http://127.0.0.1:8083/wp-includes/blocks/navigation/style.min.css?ver=7.1.4": 2551,
+                    "http://127.0.0.1:8083/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=1bf28ded04f9f188bdcb": 1115,
+                    "http://127.0.0.1:8083/wp-includes/js/comment-reply.min.js?ver=7.1.4": 1350
+                },
+                "fonts_declared": {
+                    "http://127.0.0.1:8083/wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2": 53600,
+                    "http://127.0.0.1:8083/wp-content/themes/twentytwentyfive/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2": 106112
+                }
+            }
+        }
+    },
+    "disk_kb": 153824,
+    "php_files": 1910
+}
